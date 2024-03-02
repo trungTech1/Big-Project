@@ -1,0 +1,30 @@
+.carousel-container {
+  position: relative;
+}
+
+.carousel-container img {
+  animation: slide 5s linear infinite;
+  width: 100%;
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 33px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.5s ease;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-indicator.active {
+  background-color: #333;
+}
