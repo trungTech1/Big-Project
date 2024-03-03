@@ -1,8 +1,6 @@
 import "./Signup.scss";
 
 import { AiOutlineClose } from "react-icons/ai";
-// import { UserActions } from "@stores/slices/user.slice";
-// import { useDispatch } from "react-redux";
 import userApi from "@api/index";
 import { useForm } from "react-hook-form";
 import React, { ReactNode } from "react";
@@ -19,37 +17,6 @@ export default function Signup({ modal }: SignupProps) {
     formState: { errors },
   } = useForm();
 
-  // const dispatch = useDispatch();
-
-  // const onSubmitForm = async (data: any) => {
-  //   const { firstname, lastname, email, telephone, password, confirmation } =
-  //     data;
-  //   if (
-  //     !errors.firstname &&
-  //     !errors.lastname &&
-  //     !errors.email &&
-  //     !errors.password &&
-  //     !errors.confirmation &&
-  //     !errors.telephone
-  //   ) {
-  //     try {
-  //       const res = await userApi.userApi.createUser({
-  //         firstname,
-  //         lastname,
-  //         email,
-  //         telephone,
-  //         password,
-  //         confirmation,
-  //       });
-  //       if (res.data) {
-  //         modal(false);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  // };
-
   console.log("err", errors);
   const onSubmitForm = async (data: any) => {
     try {
@@ -59,6 +26,9 @@ export default function Signup({ modal }: SignupProps) {
       delete dataCopy.confirmation;
       delete dataCopy.firstname;
       delete dataCopy.lastname;
+      dataCopy.role = "user";
+      dataCopy.avatar =
+        "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg";
       const users = await userApi.userApi.getUser();
       const emailExists = users.data.find(
         (user: any) => user.email === dataCopy.email

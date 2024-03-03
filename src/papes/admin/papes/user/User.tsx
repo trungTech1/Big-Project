@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
 import "./user.scss";
 import React from "react";
-import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import LocationSearchingIcon from "@mui/icons-material/LocationSearching";
-import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
-import PublishIcon from "@mui/icons-material/Publish";
+// import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+// import MailOutlineIcon from "@mui/icons-material/MailOutline";
+// import LocationSearchingIcon from "@mui/icons-material/LocationSearching";
+// import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
+// import PublishIcon from "@mui/icons-material/Publish";
+// import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import { AiOutlineCalendar } from "react-icons/ai";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
+import { AiOutlinePhone } from "react-icons/ai";
 
 export default function User() {
   return (
     <div className="user">
       <div className="userTitleContainer">
         <h1 className="userTitle">Edit User</h1>
-        <Link to="/newUser">
+        <Link to="/admin/newUser">
           <button className="userAddButton">Create</button>
         </Link>
       </div>
@@ -37,20 +40,20 @@ export default function User() {
               <span className="userShowInfoTitle">annabeck99</span>
             </div>
             <div className="userShowInfo">
-              <CalendarTodayIcon className="userShowIcon" />
+              <AiOutlineCalendar className="userShowIcon" />
               <span className="userShowInfoTitle">10.12.1999</span>
             </div>
             <span className="userShowTitle">Contact Details</span>
             <div className="userShowInfo">
-              <PhoneAndroidIcon className="userShowIcon" />
+              <AiOutlinePhone className="userShowIcon" />
               <span className="userShowInfoTitle">+1 123 456 67</span>
             </div>
             <div className="userShowInfo">
-              <MailOutlineIcon className="userShowIcon" />
+              {/* <MailOutlineIcon className="userShowIcon" /> */}
               <span className="userShowInfoTitle">annabeck99@gmail.com</span>
             </div>
             <div className="userShowInfo">
-              <LocationSearchingIcon className="userShowIcon" />
+              {/* <LocationSearchingIcon className="userShowIcon" /> */}
               <span className="userShowInfoTitle">New York | USA</span>
             </div>
           </div>
@@ -108,7 +111,7 @@ export default function User() {
                   alt=""
                 />
                 <label htmlFor="file">
-                  <PublishIcon className="userUpdateIcon" />
+                  {/* <PublishIcon className="userUpdateIcon" /> */}
                 </label>
                 <input type="file" id="file" style={{ display: "none" }} />
               </div>
